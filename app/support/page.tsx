@@ -53,7 +53,7 @@ export default function SupportPage() {
     <div className="py-8 px-4">
       <div className="max-w-4xl mx-auto">
         {/* Header */}
-        <motion.div className="text-center mb-12" initial="initial" animate="animate" variants={fadeInUp}>
+        <motion.div className="text-center mb-12 mt-16" initial="initial" animate="animate" variants={fadeInUp}>
           <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">How Can We Help You?</h1>
           <p className="text-gray-600 max-w-2xl mx-auto">
             OUR EXPERT TEAM IS HERE TO ASSIST YOU WITH ALL YOUR PAINT AND COLOR NEEDS. GET PERSONALIZED SUPPORT FROM OUR
@@ -73,7 +73,7 @@ export default function SupportPage() {
               {
                 icon: Phone,
                 title: "Phone Support",
-                description: "Speak directly with our paint experts",
+                description: "Speak directly with our experts",
                 contact: "+94 77 123 4567",
                 buttonText: "Contact Now",
                 gradient: "from-blue-400 to-blue-600",

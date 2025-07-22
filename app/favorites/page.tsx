@@ -75,7 +75,7 @@ export default function FavoritesPage() {
 
   return (
     <div className="py-8 px-4">
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-6xl pt-16 mx-auto">
         {/* Header */}
         <motion.div className="mb-8" initial="initial" animate="animate" variants={fadeInUp}>
           <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 flex items-center gap-3">
@@ -118,7 +118,7 @@ export default function FavoritesPage() {
                       <Button
                         variant="ghost"
                         size="sm"
-                        className="absolute top-3 right-3 bg-red-50 text-red-600 hover:bg-red-100"
+                        className="absolute top-3 right-3 w-8 h-8 rounded-full bg-red-50 text-red-600 hover:bg-red-100"
                         onClick={() => removeFavorite(item.id)}
                       >
                         <Heart className="w-4 h-4 fill-current" />
@@ -157,14 +157,6 @@ export default function FavoritesPage() {
                       <Button className="flex-1 bg-purple-600 hover:bg-purple-700 text-white rounded-full">
                         <ShoppingCart className="w-4 h-4 mr-2" />
                         Add to Cart
-                      </Button>
-                      <Button
-                        variant="outline"
-                        size="sm"
-                        className="border-red-200 text-red-600 hover:bg-red-50 rounded-full bg-transparent"
-                        onClick={() => removeFavorite(item.id)}
-                      >
-                        <Heart className="w-4 h-4" />
                       </Button>
                     </div>
                   </CardContent>

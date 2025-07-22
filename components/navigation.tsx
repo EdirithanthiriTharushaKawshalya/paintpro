@@ -22,14 +22,14 @@ export function Navigation() {
   return (
     <nav className="sticky top-4 z-50 mx-4">
       <motion.div
-        className="max-w-6xl mx-auto backdrop-blur-md bg-white/80 rounded-full px-6 py-3 shadow-lg border border-white/20"
+        className="max-w-6xl mx-auto backdrop-blur-md bg-white/50 rounded-full px-6 py-3 shadow-lg border border-white/20"
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6 }}
       >
         <div className="flex items-center justify-between">
-          <Link href="/" className="text-xl font-bold text-gray-900">
-            LOGO
+          <Link href="/" className="text-xl pl-5 font-bold text-gray-900">
+            <img src="/nav/logo.png" alt="Logo" className="h-8 w-auto" />
           </Link>
 
           {/* Desktop Navigation */}
@@ -46,7 +46,7 @@ export function Navigation() {
           </div>
 
           {/* Action Buttons */}
-          <div className="flex items-center space-x-3">
+          <div className="flex items-center pr-2 space-x-3">
             <Button variant="ghost" size="sm" className="hidden sm:flex" onClick={() => router.push("/profile")}>
               <User className="w-4 h-4" />
             </Button>

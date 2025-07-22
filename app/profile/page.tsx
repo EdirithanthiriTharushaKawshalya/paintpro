@@ -26,7 +26,7 @@ export default function ProfilePage() {
     <div className="py-8 px-4">
       <div className="max-w-4xl mx-auto">
         {/* Header */}
-        <motion.div className="text-center mb-8" initial="initial" animate="animate" variants={fadeInUp}>
+        <motion.div className="text-center mb-8 mt-16" initial="initial" animate="animate" variants={fadeInUp}>
           <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">My Profile</h1>
           <p className="text-gray-600">Manage your account settings and preferences</p>
         </motion.div>

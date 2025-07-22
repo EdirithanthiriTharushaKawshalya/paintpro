@@ -26,15 +26,15 @@ export default function HomePage() {
     <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative py-20 px-4 text-center">
-        <motion.div className="max-w-4xl mx-auto" initial="initial" animate="animate" variants={staggerContainer}>
-          <motion.h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6" variants={fadeInUp}>
+        <motion.div className="max-w-4xl mx-auto pt-20" initial="initial" animate="animate" variants={staggerContainer}>
+          <motion.h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6 mt-20" variants={fadeInUp}>
             PREMIUM PAINTS & ACCESSORIES
           </motion.h1>
           <motion.p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto" variants={fadeInUp}>
             Transform your space with our high-quality paints, professional tools, and expert guidance. From interior
             elegance to exterior durability.
           </motion.p>
-          <motion.div className="flex flex-col sm:flex-row gap-4 justify-center" variants={fadeInUp}>
+          <motion.div className="flex flex-col sm:flex-row gap-4 pb-20 justify-center" variants={fadeInUp}>
             <Button
               size="lg"
               className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-3 rounded-full"
@@ -48,7 +48,7 @@ export default function HomePage() {
               className="border-purple-300 text-purple-700 hover:bg-purple-50 px-8 py-3 rounded-full bg-transparent"
               onClick={() => router.push("/products")}
             >
-              Browse Categories
+              Browse Colours
             </Button>
           </motion.div>
         </motion.div>
@@ -68,30 +68,35 @@ export default function HomePage() {
                   title: "Interior Paints",
                   description: "Premium interior paints for walls, ceilings, and decorative finishes",
                   buttonText: "Explore Interior Paints",
-                  gradient: "from-purple-400 to-purple-600",
+                  image: "/home/interior.jpg",
                   category: "Interior Paint",
                 },
                 {
                   title: "Exterior Paints",
                   description: "Weather-resistant paints for outdoor surfaces and facades",
                   buttonText: "Explore Exterior Paints",
-                  gradient: "from-blue-400 to-purple-500",
+                  image: "/home/exterior.jpg",
                   category: "Exterior Paint",
                 },
                 {
                   title: "Tools & Accessories",
                   description: "Professional brushes, rollers, and painting equipment",
                   buttonText: "Explore Tools",
-                  gradient: "from-green-400 to-purple-500",
+                  image: "/home/tools.jpg",
                   category: "Tools",
                 },
               ].map((category, index) => (
                 <motion.div key={index} variants={fadeInUp}>
                   <Card
-                    className="overflow-hidden hover:shadow-xl transition-all duration-300 group cursor-pointer backdrop-blur-sm bg-white/90 border-0 shadow-lg"
+                    className="overflow-hidden hover:shadow-xl transition-all duration-300 group cursor-pointer backdrop-blur-sm bg-white/90 border-0 shadow-lg backdrop-blur-md bg-white/80"
                     onClick={() => router.push(`/products?category=${encodeURIComponent(category.category)}`)}
                   >
-                    <div className={`h-48 bg-gradient-to-br ${category.gradient} relative overflow-hidden`}>
+                    <div className="h-48 relative overflow-hidden">
+                      <img
+                        src={category.image}
+                        alt={category.title}
+                        className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105"
+                      />
                       <div className="absolute inset-0 bg-black/10 group-hover:bg-black/5 transition-colors duration-300" />
                     </div>
                     <CardContent className="p-6">
@@ -120,27 +125,27 @@ export default function HomePage() {
               <h2 className="text-3xl font-bold text-gray-900 mb-4">Why Choose US?</h2>
             </motion.div>
 
-            <div className="grid md:grid-cols-4 gap-6">
+            <div className="grid md:grid-cols-4 gap-6 ">
               {[
                 {
                   icon: Award,
                   title: "Premium Quality",
-                  description: "Only the finest paints from trusted manufacturers with proven durability",
+                  description: "Only the finest paints from trusted manufacturers with proven durability.",
                 },
                 {
                   icon: Truck,
                   title: "Fast Delivery",
-                  description: "Quick and reliable delivery to your doorstep across the island",
+                  description: "Quick and reliable delivery service to your doorstep across the island.",
                 },
                 {
                   icon: HeadphonesIcon,
                   title: "Expert Support",
-                  description: "Professional guidance and color consultation for perfect results",
+                  description: "Professional guidance and expert color consultation for perfect results.",
                 },
                 {
                   icon: Leaf,
                   title: "Eco-Friendly",
-                  description: "Environment-friendly paints with low VOC and sustainable practices",
+                  description: "Environment-friendly paints with low VOC and sustainable practices.",
                 },
               ].map((feature, index) => (
                 <motion.div key={index} variants={fadeInUp}>

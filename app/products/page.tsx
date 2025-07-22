@@ -7,7 +7,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Checkbox } from "@/components/ui/checkbox"
-import { Search, Heart, Star, ChevronLeft, ChevronRight } from "lucide-react"
+import { Search, Heart, Star, ChevronLeft, ChevronRight, ShoppingCart } from "lucide-react"
 
 const fadeInUp = {
   initial: { opacity: 0, y: 60 },
@@ -88,7 +88,7 @@ const products = [
     isFavorite: false,
   },
   {
-    name: "Exterior Paint - Forest Green",
+    name: "Premium Exterior Paint - Forest Green",
     rating: 4,
     price: "LKR 3,200",
     originalPrice: "LKR 3,500",
@@ -191,7 +191,7 @@ export default function ProductsPage() {
     <div className="py-8 px-4">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
-        <motion.div className="mb-8" initial="initial" animate="animate" variants={fadeInUp}>
+        <motion.div className="mb-8 mt-16" initial="initial" animate="animate" variants={fadeInUp}>
           <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-2">All Products</h1>
           <p className="text-gray-600 mb-6">DISCOVER OUR COMPLETE RANGE OF PREMIUM PAINTS AND ACCESSORIES</p>
 
@@ -289,7 +289,7 @@ export default function ProductsPage() {
                         <Button
                           variant="ghost"
                           size="sm"
-                          className={`absolute top-3 right-3 backdrop-blur-sm hover:bg-white/90 ${
+                          className={`absolute top-3 right-3 w-8 h-8 rounded-full backdrop-blur-sm hover:bg-white/90 ${
                             product.isFavorite ? "bg-red-50 text-red-600" : "bg-white/90 text-gray-700"
                           }`}
                           onClick={() => toggleFavorite(index)}
@@ -322,6 +322,7 @@ export default function ProductsPage() {
                       </div>
 
                       <Button className="w-full bg-purple-600 hover:bg-purple-700 text-white rounded-full">
+                        <ShoppingCart className="w-4 h-4 mr-2" />
                         Add to Cart
                       </Button>
                     </CardContent>

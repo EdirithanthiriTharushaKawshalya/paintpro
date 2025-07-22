@@ -27,7 +27,7 @@ export default function AboutPage() {
     <div className="py-8 px-4">
       <div className="max-w-4xl mx-auto">
         {/* Our Story Section */}
-        <motion.section className="mb-16" initial="initial" animate="animate" variants={staggerContainer}>
+        <motion.section className="mb-16 mt-16" initial="initial" animate="animate" variants={staggerContainer}>
           <Card className="backdrop-blur-sm bg-white/80 border-0 shadow-lg overflow-hidden">
             <CardContent className="p-8 md:p-12">
               <motion.div className="text-center mb-8" variants={fadeInUp}>
@@ -35,9 +35,9 @@ export default function AboutPage() {
               </motion.div>
 
               <motion.div className="flex justify-center mb-8" variants={fadeInUp}>
-                <div className="w-80 h-64 bg-gradient-to-br from-purple-400 to-purple-600 rounded-2xl flex items-center justify-center">
+                <div className="w-80 h-64 rounded-2xl flex items-center justify-center">
                   <Image
-                    src="/placeholder.svg?height=200&width=300"
+                    src="/aboutus/about us.png?height=200&width=300"
                     alt="Our team illustration"
                     width={300}
                     height={200}
@@ -84,7 +84,7 @@ export default function AboutPage() {
               {
                 icon: Leaf,
                 title: "Eco-Friendly",
-                description: "Eco-friendly paints with low-VOC options.",
+                description: "Eco-friendly paints with low-VOC formulas that are safer for you and the environment.",
                 gradient: "from-green-400 to-green-600",
               },
               {

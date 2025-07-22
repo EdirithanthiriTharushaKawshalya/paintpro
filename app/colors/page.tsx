@@ -7,7 +7,8 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Badge } from "@/components/ui/badge"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { Search, Heart, ChevronLeft, ChevronRight } from "lucide-react"
+import { Search, Heart, ChevronLeft, ChevronRight, Palette, ShoppingCart } from "lucide-react"
+
 
 const fadeInUp = {
   initial: { opacity: 0, y: 60 },
@@ -24,7 +25,7 @@ const staggerContainer = {
 }
 
 const colorFamilies = [
-  { name: "All Colors", count: 120, color: "bg-gradient-to-br from-purple-400 to-purple-600" },
+  { name: "All Colors", count: 120, icon: Palette, color: "" },
   { name: "Neutrals", count: 45, color: "bg-gray-400" },
   { name: "Blues", count: 32, color: "bg-blue-500" },
   { name: "Greens", count: 28, color: "bg-green-500" },
@@ -194,7 +195,7 @@ export default function ColorsPage() {
     <div className="py-8 px-4">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
-        <motion.div className="text-center mb-12" initial="initial" animate="animate" variants={fadeInUp}>
+        <motion.div className="text-center mb-12 mt-16" initial="initial" animate="animate" variants={fadeInUp}>
           <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 flex items-center justify-center gap-3">
             <div className="w-8 h-8 bg-gradient-to-br from-purple-400 to-purple-600 rounded-lg flex items-center justify-center">
               <div className="w-4 h-4 bg-white rounded-sm" />
@@ -216,7 +217,7 @@ export default function ColorsPage() {
             <Button
               variant="outline"
               size="sm"
-              className="absolute left-0 top-1/2 transform -translate-y-1/2 z-10 bg-white/90 backdrop-blur-sm rounded-full w-10 h-10 p-0"
+              className="absolute -left-10 top-1/2 transform -translate-y-1/2 z-10 bg-white/90 backdrop-blur-sm rounded-full w-10 h-10 p-0 "
               onClick={scrollLeft}
             >
               <ChevronLeft className="w-4 h-4" />
@@ -224,7 +225,7 @@ export default function ColorsPage() {
 
             <div
               ref={scrollRef}
-              className="flex gap-4 overflow-x-auto scrollbar-hide pb-4 px-12"
+              className="flex gap-4 overflow-x-auto scrollbar-hide pb-8 pt-8 px-12"
               style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
             >
               {colorFamilies.map((family, index) => (
@@ -241,7 +242,14 @@ export default function ColorsPage() {
                     }}
                   >
                     <CardContent className="p-6 text-center">
-                      <div className={`w-16 h-16 ${family.color} rounded-2xl mx-auto mb-3`} />
+                      {family.icon ? (
+                        <div className="w-16 h-16 rounded-2xl mx-auto mb-3 flex items-center justify-center border border-gray-300 bg-white">
+                          <family.icon className="w-6 h-6 text-gray-700" />
+                        </div>
+                      ) : (
+                        <div className={`w-16 h-16 ${family.color} rounded-2xl mx-auto mb-3`} />
+                      )}
+
                       <h3 className="font-semibold text-gray-900">{family.name}</h3>
                       <p className="text-sm text-gray-600">{family.count} Colors</p>
                     </CardContent>
@@ -253,7 +261,7 @@ export default function ColorsPage() {
             <Button
               variant="outline"
               size="sm"
-              className="absolute right-0 top-1/2 transform -translate-y-1/2 z-10 bg-white/90 backdrop-blur-sm rounded-full w-10 h-10 p-0"
+              className="absolute -right-10 top-1/2 transform -translate-y-1/2 z-10 bg-white/90 backdrop-blur-sm rounded-full w-10 h-10 p-0"
               onClick={scrollRight}
             >
               <ChevronRight className="w-4 h-4" />
@@ -314,7 +322,7 @@ export default function ColorsPage() {
                     <Button
                       variant="ghost"
                       size="sm"
-                      className={`absolute top-3 right-3 backdrop-blur-sm hover:bg-white/90 ${
+                      className={`absolute top-3 right-3 w-8 h-8 rounded-full backdrop-blur-sm hover:bg-white/90 ${
                         color.isFavorite ? "bg-red-50 text-red-600" : "bg-white/90 text-gray-700"
                       }`}
                       onClick={() => toggleFavorite(index)}
@@ -333,6 +341,7 @@ export default function ColorsPage() {
                     </Badge>
                   </div>
                   <Button className="w-full bg-purple-600 hover:bg-purple-700 text-white rounded-full">
+                    <ShoppingCart className="w-4 h-4 mr-2" />
                     Add to Cart
                   </Button>
                 </CardContent>
