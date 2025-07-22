@@ -10,6 +10,10 @@ const inter = Inter({ subsets: ["latin"] })
 export const metadata: Metadata = {
   title: "PaintPro - Premium Paints & Accessories",
   description: "Transform your space with high-quality paints and professional tools",
+  icons: {
+    icon: '/logo.png',
+    shortcut: '/logo-16x16.png',
+  },
 }
 
 export default function RootLayout({
