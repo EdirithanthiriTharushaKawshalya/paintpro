@@ -119,7 +119,7 @@ export default function AboutPage() {
 
         {/* Call to Action */}
         <motion.section initial="initial" whileInView="animate" viewport={{ once: true }} variants={fadeInUp}>
-          <Card className="backdrop-blur-sm bg-white/80 border-0 shadow-lg">
+          <Card className="backdrop-blur-sm bg-white/40 border-0 shadow-lg">
             <CardContent className="p-8 md:p-12 text-center">
               <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">READY TO TRANSFORM YOUR SPACE?</h2>
               <p className="text-gray-600 mb-8 max-w-2xl mx-auto">
